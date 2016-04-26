@@ -16,6 +16,7 @@ class CodeGolf{
 	}
 
 	private function run($inp){
+		global $argv;
 		$replace = array(
 				"func(" => "function(",
 				"f(" => "for(",
