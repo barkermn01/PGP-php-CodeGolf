@@ -1,7 +1,7 @@
 # PGP-php-CodeGolf
 PHP Golf Processor
 
-Lets make php a little more code golf freindly 
+Lets make php a little more code golf freindly - it's not like PHP has consitent naming rules anyway :)
 
 #Usage
 
