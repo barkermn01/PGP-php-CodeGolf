@@ -28,14 +28,25 @@ class CodeGolf{
 		global $argv;
 		// replace short hand pgp with php code
 		$replace = array(
-				"func(" => "function(",
-				"f(" => "for(",
-				"w(" => "while(",
-				"fe(" => "fe(",
-				"st(" => "str_replace(",
-				"e " => "echo ",
-				"sr(" => "str_replace(",
-				"p(" => "print(",
+			"fn(" => "function(",
+			"f(" => "for(",
+			"w(" => "while(",
+			"fe(" => "fe(",
+			"sr(" => "str_replace(",
+			"sR(" => "str_ireplace(",
+			"ss(" => "str_split(",
+			"sS(" => "str_shuffle(",
+			"se(" => "str_ends_with(",
+			"sc(" => "str_contains(",
+			"h(" => "hash(",
+			"p(" => "print(",
+			"am(" => "array_merge(",
+			"ak(" => "array_keys(",
+			"av(" => "array_values(",
+			"ars(" => "arsort(",
+			"as(" => "asort(",
+			"e(" => "end(",
+			"n(" => "next(",
 		);
 		$inp = str_replace(array_keys($replace), array_values($replace), $inp);
 		// run the code if it returns caputre it
