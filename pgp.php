@@ -53,10 +53,13 @@ class CodeGolf{
 			"am(" => "array_merge(",
 			"ak(" => "array_keys(",
 			"av(" => "array_values(",
-			"ars(" => "arsort(",
+			"aS(" => "arsort(",
 			"as(" => "asort(",
-			"e(" => "end(",
-			"n(" => "next(",
+			"ar(" => "array_reverse(",
+			"ae(" => "end(",
+			"an(" => "next(",
+			"e(" => "explode(",
+			"i(" => "implode("
 		);
 		$inp = str_replace(array_keys($replace), array_values($replace), $inp);
 		if($this->save){
