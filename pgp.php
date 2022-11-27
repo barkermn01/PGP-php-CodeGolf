@@ -9,7 +9,7 @@ class CodeGolf{
 		$argv[0] = $inp;
 		unset($argv[0]);
 		foreach ($argv as $key => $val){
-			if(substr($val, 0, 2) == "--")){
+			if(substr($val, 0, 2) == "--"){
 				switch($val){
 					case "--save":
 					$this->save = true;
@@ -29,7 +29,7 @@ class CodeGolf{
 		}
 	}
 
-	private function loadFile(string $filepath,{
+	private function loadFile(string $filepath){
 		// call run with the file contents
 		$this->run(file_get_contents($filepath));
 	}
@@ -39,24 +39,30 @@ class CodeGolf{
 		global $argv;
 		// replace short hand pgp with php code
 		$replace = array(
+			// basic control stuct commands
 			"fn(" => "function(",
 			"f(" => "for(",
+			"w(" => "while(",
+			"p(" => "print(",
+			// file handling
 			"fo(" => "fopen(",
 			"fe(" => "feof(",
 			"fE(" => "!feof(",
 			"fr(" => "fread(",
 			"fw(" => "fwrite(",
 			"fc(" => "fclose(",
-			"w(" => "while(",
-			"fe(" => "fe(",
+			// string handling
 			"sr(" => "str_replace(",
 			"sR(" => "str_ireplace(",
 			"ss(" => "str_split(",
 			"sS(" => "str_shuffle(",
+			"sb(" => "substr(",
 			"se(" => "str_ends_with(",
 			"sc(" => "str_contains(",
+			"sl(" => "strlen(",
 			"h(" => "hash(",
-			"p(" => "print(",
+			
+			// array handling
 			"am(" => "array_merge(",
 			"ak(" => "array_keys(",
 			"av(" => "array_values(",
@@ -66,7 +72,8 @@ class CodeGolf{
 			"ae(" => "end(",
 			"an(" => "next(",
 			"e(" => "explode(",
-			"i(" => "implode("
+			"i(" => "implode(",
+			"c(" => "count(",
 		);
 		$inp = str_replace(array_keys($replace), array_values($replace), $inp);
 		if($this->save){
