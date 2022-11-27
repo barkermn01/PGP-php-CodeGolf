@@ -9,7 +9,14 @@ class CodeGolf{
 		$argv[0] = $inp;
 		unset($argv[0]);
 		foreach ($argv as $key => $val){
-			if(str_contains($val, "--save")) $this->save = true;
+			if(substr($val, 0, 2) == "--")){
+				switch($val){
+					case "--save":
+					$this->save = true;
+					break;
+				}
+				unset($argv[$key]);
+			}
 		}
 		$argv = array_values($argv);
 		// check if it's a file
